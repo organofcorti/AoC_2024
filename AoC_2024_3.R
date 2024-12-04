@@ -23,9 +23,8 @@ product_sum
 ## part 2: find do and don't
 ## regex
 library(zoo)
-
 do_dont_mul <- sapply(1:length(corr_data), function(x) str_extract_all(corr_data[x], pattern="(do\\(\\))|(don't\\(\\))|(mul\\([0-9]+,[0-9]+\\))")) %>% unlist
-
+                      
 ## 
 start_strs_index <- data.table(index = which(do_dont_mul == "do()"), instr = "start")
 stop_strs_index <- data.table(index = which(do_dont_mul == "don't()"), instr = "stop")
